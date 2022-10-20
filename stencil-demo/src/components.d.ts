@@ -6,20 +6,60 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-
+    interface TodoListContainer {
+    }
+    interface TodoListInput {
+    }
+    interface TodoListOutput {
+        "todoList": Array<string>;
+    }
 }
 declare global {
+    interface HTMLTodoListContainerElement extends Components.TodoListContainer, HTMLStencilElement {
+    }
+    var HTMLTodoListContainerElement: {
+        prototype: HTMLTodoListContainerElement;
+        new (): HTMLTodoListContainerElement;
+    };
+    interface HTMLTodoListInputElement extends Components.TodoListInput, HTMLStencilElement {
+    }
+    var HTMLTodoListInputElement: {
+        prototype: HTMLTodoListInputElement;
+        new (): HTMLTodoListInputElement;
+    };
+    interface HTMLTodoListOutputElement extends Components.TodoListOutput, HTMLStencilElement {
+    }
+    var HTMLTodoListOutputElement: {
+        prototype: HTMLTodoListOutputElement;
+        new (): HTMLTodoListOutputElement;
+    };
     interface HTMLElementTagNameMap {
+        "todo-list-container": HTMLTodoListContainerElement;
+        "todo-list-input": HTMLTodoListInputElement;
+        "todo-list-output": HTMLTodoListOutputElement;
     }
 }
 declare namespace LocalJSX {
+    interface TodoListContainer {
+    }
+    interface TodoListInput {
+    }
+    interface TodoListOutput {
+        "todoList"?: Array<string>;
+    }
     interface IntrinsicElements {
+        "todo-list-container": TodoListContainer;
+        "todo-list-input": TodoListInput;
+        "todo-list-output": TodoListOutput;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "todo-list-container": LocalJSX.TodoListContainer & JSXBase.HTMLAttributes<HTMLTodoListContainerElement>;
+            "todo-list-input": LocalJSX.TodoListInput & JSXBase.HTMLAttributes<HTMLTodoListInputElement>;
+            "todo-list-output": LocalJSX.TodoListOutput & JSXBase.HTMLAttributes<HTMLTodoListOutputElement>;
         }
     }
 }

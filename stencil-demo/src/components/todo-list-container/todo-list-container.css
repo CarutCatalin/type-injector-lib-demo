@@ -1,0 +1,17 @@
+body {
+  height: 100vh;
+  background: url(http://s1.picswalls.com/wallpapers/2014/08/16/free-road-wallpaper_072644792_208.jpg) no-repeat center center/ cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 350px;
+  padding: 20px 10px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 3px;
+  margin-bottom: 20px;
+  align-items: center ;
+}
